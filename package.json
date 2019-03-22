@@ -1,0 +1,30 @@
+{
+  "name": "movie_api",
+  "version": "1.0.0",
+  "description": "myFlix api to get information about movies.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "eslint-config-google": "^0.12.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llauer/myFlix.git"
+  },
+  "keywords": [],
+  "author": "Larry Lauer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llauer/myFlix/issues"
+  },
+  "homepage": "https://github.com/llauer/myFlix#readme"
+}
