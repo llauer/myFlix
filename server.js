@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 const http = require('http'),
   url = require('url'),
   fs = require('fs');
@@ -23,7 +25,7 @@ http.createServer((request, response) => {
       if (err) {
         console.log(err);
       } else {
-        console.log('Added to log.')
+        console.log('Added to log.');
       }
     });
 
@@ -31,7 +33,7 @@ http.createServer((request, response) => {
       'Content-Type': 'text/html'
     });
     response.write(data);
-    response.end;
+    response.end();
   });
 
 }).listen(8080);
