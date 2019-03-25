@@ -11,13 +11,9 @@ app.use(morgan('common'));
 
 app.use(express.static('public'));
 
-//error handeling
-app.use(function(err, req, res, next) {
-  console.error(err.stack);
-  res.status(500).send('Oooops somethings wrong!');
-});
 
-//using imdb top 100
+
+//using imdb top 100, This will be going to a database.
 let topMovies = [{
     "title": "The Shawshank Redemption",
     "rank": "1",
@@ -518,14 +514,24 @@ let topMovies = [{
     "rank": "100",
     "id": "tt0097576"
   }
-]
+];
 
 app.get('/', function(req, res) {
   res.send('<h1>Hello you have found the root.</h1>');
 });
 
+//showing the top 10 movies.
 app.get('/movies', function(req, res) {
-  res.json(topMovies);
+  res.json(topMovies.slice(0, 10));
+});
+app.get('*', function(req, res) {
+  res.send('<h1>I am sorry human I can not find what you are looking for. .</h1>');
+});
+
+//error handeling
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('<h1>Oooops somethings wrong!</h1>');
 });
 
 app.listen(8080, function() {
